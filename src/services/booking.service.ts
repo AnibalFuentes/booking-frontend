@@ -8,7 +8,7 @@ export const bookingService = {
   },
 
   async getById(id: string): Promise<Booking> {
-    const response = await api.get(/bookings/${id});
+    const response = await api.get(`/bookings/${id}`);
     return response.data;
   },
 
@@ -18,12 +18,12 @@ export const bookingService = {
   },
 
   async updateStatus(id: string, status: Booking['status']): Promise<Booking> {
-    const response = await api.patch(/bookings/${id}/status, { status });
+    const response = await api.patch(`/bookings/${id}/status`, { status });
     return response.data;
   },
 
   async getByEmail(email: string): Promise<Booking[]> {
-    const response = await api.get(/bookings/email/${email});
+    const response = await api.get(`/bookings/email/${email}`);
     return response.data;
   }
 };
