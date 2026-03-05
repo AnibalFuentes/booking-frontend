@@ -1,5 +1,5 @@
 import { api } from './api';
-import { Review } from '../types';
+import type { Review } from '../types';
 
 export const reviewService = {
   async getAll(): Promise<Review[]> {
