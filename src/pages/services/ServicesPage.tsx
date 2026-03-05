@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { serviceService } from '../services/service.service';
-import type { Service } from '../types';
+import { serviceService } from '../../services/service.service';
+import type { Service } from '../../types';
 import { Clock, DollarSign, Users } from 'lucide-react';
 
 export const ServicesPage: React.FC = () => {
