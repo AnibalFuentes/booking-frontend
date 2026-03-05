@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Clock, DollarSign, Users, Star, ArrowLeft } from 'lucide-react';
 import { serviceService } from '../../services/service.service';
 import type { Review, Service } from '../../types';
+import { reviewService } from '../../services/review.service';
 
 export const ServiceDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
