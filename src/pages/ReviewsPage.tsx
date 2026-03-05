@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { reviewService } from "../services/review.service";
 import { serviceService } from "../services/service.service";
 import type { Review, Service } from "../types";
-import type { Star, User } from "lucide-react";
+import { Star, User } from "lucide-react";
 
 export const ReviewsPage: React.FC = () => {
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -15,11 +15,6 @@ export const ReviewsPage: React.FC = () => {
     comment: "",
   });
 
-  useEffect(() => {
-    loadServices();
-    loadReviews();
-  }, []);
-
   const loadServices = async () => {
     const data = await serviceService.getAll();
     setServices(data);
@@ -29,6 +24,14 @@ export const ReviewsPage: React.FC = () => {
     const data = await reviewService.getAll();
     setReviews(data);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await loadServices();
+      await loadReviews();
+    };
+    fetchData();
+  }, []);
 
   const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -14,14 +14,14 @@ export const BookingPage: React.FC = () => {
     time: ''
   });
 
-  React.useEffect(() => {
-    loadServices();
-  }, []);
-
   const loadServices = async () => {
     const data = await serviceService.getAll();
     setServices(data);
   };
+
+  React.useEffect(() => {
+    loadServices();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
