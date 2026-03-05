@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { ServicesPage } from './pages/ServicesPage';
-import { BookingPage } from './pages/BookingPage';
-import { ReviewsPage } from './pages/ReviewsPage';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { ReviewsPage } from "./pages/reviews/ReviewsPage";
+import { ServicesPage } from "./pages/services/ServicesPage";
+import { BookingPage } from "./pages/bookings/BookingPage";
 
 function App() {
   return (
